@@ -1,0 +1,20 @@
+[
+  {
+    "id": "local-001",
+    "title": "Our Town History",
+    "author": "John Smith",
+    "formats": {
+      "pdf": "books/our-town.pdf"
+    },
+    "source": "local"
+  },
+  {
+    "id": "pg-1661",
+    "title": "The Adventures of Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "formats": {
+      "html": "https://www.gutenberg.org/ebooks/1661.html"
+    },
+    "source": "project-gutenberg"
+  }
+]
