@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Open eBook Library</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7"></script>
+  <title>My E-Book Library</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>📚 Open eBook Library</h1>
-  <input id="search" type="text" placeholder="Search books..." />
+  <h1>My E-Book Library</h1>
+  <input type="text" id="search" placeholder="Search by title or author" oninput="handleSearch()">
   <div id="results"></div>
 
-  <script src="script.js"></script>
+  <script src="/js/search.js"></script>
 </body>
 </html>
