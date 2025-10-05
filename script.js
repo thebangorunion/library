@@ -39,7 +39,20 @@ function displayBooks(books) {
   });
 }
 
-document.getElementById('search').addEventListener('input', e => {
+// --- Search input handling ---
+const searchInput = document.getElementById('search');
+
+// Trigger live search as you type (after 2 chars)
+searchInput.addEventListener('input', e => {
   const q = e.target.value.trim();
   if (q.length > 2) searchBooks(q);
+});
+
+// Also trigger search when you press Enter
+searchInput.addEventListener('keypress', e => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const q = e.target.value.trim();
+    if (q) searchBooks(q);
+  }
 });
