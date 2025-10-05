@@ -1,20 +1,18 @@
 [
   {
-    "id": "local-001",
-    "title": "Our Town History",
-    "author": "John Smith",
-    "formats": {
-      "pdf": "books/our-town.pdf"
-    },
-    "source": "local"
+    "id": 1342,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "language": "en",
+    "subjects": ["Romance", "Fiction"],
+    "html_url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm"
   },
   {
-    "id": "pg-1661",
-    "title": "The Adventures of Sherlock Holmes",
-    "author": "Arthur Conan Doyle",
-    "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1661.html"
-    },
-    "source": "project-gutenberg"
+    "id": 84,
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "language": "en",
+    "subjects": ["Horror", "Science Fiction"],
+    "html_url": "https://www.gutenberg.org/files/84/84-h/84-h.htm"
   }
 ]
