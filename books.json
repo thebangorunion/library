@@ -1,18 +1,23 @@
 [
   {
-    "id": 1342,
-    "title": "Pride and Prejudice",
-    "author": "Jane Austen",
-    "language": "en",
-    "subjects": ["Romance", "Fiction"],
-    "html_url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm"
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925,
+    "genre": "Novel",
+    "link": "ebooks/the-great-gatsby.pdf"
   },
   {
-    "id": 84,
-    "title": "Frankenstein",
-    "author": "Mary Shelley",
-    "language": "en",
-    "subjects": ["Horror", "Science Fiction"],
-    "html_url": "https://www.gutenberg.org/files/84/84-h/84-h.htm"
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "genre": "Dystopian",
+    "link": "ebooks/1984.pdf"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year": 1960,
+    "genre": "Novel",
+    "link": "ebooks/to-kill-a-mockingbird.pdf"
   }
 ]
