@@ -15,7 +15,7 @@ async function searchBooks(url = null) {
         return;
     }
 
-    books.forEach(book => {
+    books.slice(0, 10).forEach(book => {
         const bookDiv = document.createElement('div');
         bookDiv.className = 'book';
         bookDiv.innerHTML = `
