@@ -1,5 +1,5 @@
 async function loadBooks() {
-    const res = await fetch("/data/books.json");
+    const res = await fetch("data/books.json");
     return res.json();
 }
 
