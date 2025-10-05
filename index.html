@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gutendex Books</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .book { margin-bottom: 10px; }
-        .book-title { font-weight: bold; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My E-Library</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gutendex Books</h1>
-    <input type="text" id="search" placeholder="Search books...">
-    <button onclick="searchBooks()">Search</button>
-    <div id="books"></div>
+  <h1>My E-Library</h1>
 
-    <script src="app.js"></script>
+  <input type="text" id="search" placeholder="Search by title or author...">
+
+  <select id="category">
+    <option value="all">All Categories</option>
+  </select>
+
+  <div id="book-list"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
