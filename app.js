@@ -3,21 +3,6 @@ const searchInput = document.getElementById('search');
 let nextUrl = null;
 let prevUrl = null;
 
-async function fetchBooks(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        nextUrl = data.next;
-        prevUrl = data.previous;
-        return data.results;
-    } catch (err) {
-        booksDiv.innerHTML = 'Error loading books: ' + err.message;
-        return [];
-    }
-}
-
-
 async function searchBooks(url = null) {
     const query = searchInput.value;
     booksDiv.innerHTML = 'Loading...';
@@ -43,6 +28,23 @@ async function searchBooks(url = null) {
 
     showPagination();
 }
+
+
+async function fetchBooks(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        nextUrl = data.next;
+        prevUrl = data.previous;
+        return data.results;
+    } catch (err) {
+        booksDiv.innerHTML = 'Error loading books: ' + err.message;
+        return [];
+    }
+}
+
+
 
 function showPagination() {
     const paginationDiv = document.createElement('div');
