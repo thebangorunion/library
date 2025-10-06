@@ -13,9 +13,13 @@ async function loadBooks() {
 
 function populateCategories() {
   const categorySelect = document.getElementById('category');
-  const cats = Array.from(new Set(books.map(b => b.cat))).sort();
+
+  // Flatten all categories from all books and remove duplicates
+  const allCats = books.flatMap(b => b.cat || []);
+  const uniqueCats = Array.from(new Set(allCats)).sort();
+
   categorySelect.innerHTML = '<option value="all">All Categories</option>';
-  cats.forEach(cat => {
+  uniqueCats.forEach(cat => {
     const option = document.createElement('option');
     option.value = cat;
     option.textContent = cat;
@@ -31,7 +35,7 @@ function displayBooks() {
   const endIndex = startIndex + booksPerPage;
   const pageBooks = filteredBooks.slice(startIndex, endIndex);
 
-  pageBooks.forEach((book, index) => {
+  pageBooks.forEach((book) => {
     const card = document.createElement('div');
     card.className = 'book-card';
     card.innerHTML = `
@@ -40,8 +44,8 @@ function displayBooks() {
         <h3>${book.title}</h3>
         <p><strong>Author:</strong> ${book.auth || 'Unknown'}</p>
         <p><strong>Year:</strong> ${book.year || '—'}</p>
-        <p><strong>Collection:</strong> ${book.cat || '—'}</p>
-        <a href="book.html?id=${encodeURIComponent(book.title)}" class="read-btn"> View Details</a>
+        <p><strong>Collection:</strong> ${book.cat ? book.cat.join(', ') : '—'}</p>
+        <a href="book.html?id=${encodeURIComponent(book.title)}" class="read-btn">View Details</a>
       </div>
     `;
     list.appendChild(card);
@@ -58,8 +62,11 @@ function filterBooks() {
     const matchesSearch =
       b.title.toLowerCase().includes(searchTerm) ||
       (b.auth && b.auth.toLowerCase().includes(searchTerm));
+
+    // Check if book categories include the selected category
     const matchesCategory =
-      selectedCategory === 'all' || b.cat === selectedCategory;
+      selectedCategory === 'all' || (b.cat && b.cat.includes(selectedCategory));
+
     return matchesSearch && matchesCategory;
   });
 
