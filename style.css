@@ -58,19 +58,19 @@ input, select {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.4rem 0.8rem;
-  background-color: #007bff;
+  background-color: #541025;
   color: white;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .read-btn:hover {
-  background-color: #0056b3;
+  background-color: #701632;
 }
 
 
 .book-card a:hover {
-  background-color: #0056b3;
+  background-color: #701632;
 }
 
 .pagination {
@@ -84,7 +84,7 @@ input, select {
 .pagination button {
   padding: 0.5rem 1rem;
   border: none;
-  background: #007bff;
+  background: #541025;
   color: white;
   border-radius: 6px;
   cursor: pointer;
