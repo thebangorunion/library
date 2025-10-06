@@ -22,26 +22,52 @@ input, select {
   gap: 1rem;
 }
 
-.book-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-
 .book-card h3 {
   margin-top: 0;
 }
 
-.book-card a {
+.book-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.book-cover {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.read-btn {
   display: inline-block;
   margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #007bff;
   color: white;
-  background-color: #007BFF;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
   text-decoration: none;
+  border-radius: 5px;
 }
+
+.read-btn:hover {
+  background-color: #0056b3;
+}
+
 
 .book-card a:hover {
   background-color: #0056b3;
