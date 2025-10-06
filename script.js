@@ -9,11 +9,11 @@ async function loadBooks() {
 
 function populateCategories() {
   const categorySelect = document.getElementById('category');
-  const genres = Array.from(new Set(books.map(b => b.genre)));
-  genres.forEach(genre => {
+  const cats = Array.from(new Set(books.map(b => b.cat)));
+  cats.forEach(cat => {
     const option = document.createElement('option');
-    option.value = genre;
-    option.textContent = genre;
+    option.value = cat;
+    option.textContent = cat;
     categorySelect.appendChild(option);
   });
 }
@@ -28,7 +28,7 @@ function displayBooks(bookArray) {
       <h3>${book.title}</h3>
       <p><strong>Author:</strong> ${book.author}</p>
       <p><strong>Year:</strong> ${book.year}</p>
-      <p><strong>Genre:</strong> ${book.genre}</p>
+      <p><strong>In:</strong> ${book.cat}</p>
       <a href="${book.link}" target="_blank">Read Book</a>
     `;
     list.appendChild(card);
@@ -41,7 +41,7 @@ function filterBooks() {
 
   const filtered = books.filter(b => {
     const matchesSearch = b.title.toLowerCase().includes(searchTerm) || b.author.toLowerCase().includes(searchTerm);
-    const matchesCategory = selectedCategory === 'all' || b.genre === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || b.cat === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
