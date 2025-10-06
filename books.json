@@ -1,25 +1,47 @@
 [
   {
-    "title": "The Great Gatsby",
-    "img": "url",
-    "auth": "F. Scott Fitzgerald",
-    "year": 1925,
-    "cat": "Novel",
-    "link": "ebooks/the-great-gatsby.pdf",
-    "desc": "1984 is bla bla bla"
+    "title": "A Trip to the Chain-Bridge, Near Bangor, and Other Parts of North Wales",
+    "img": "https://www.gutenberg.org/cache/epub/58096/pg58096.cover.medium.jpg",
+    "auth": "Anonymous",
+    "year": 1826,
+    "cat": "Cymric Collection",
+    "link": "https://www.gutenberg.org/ebooks/58096.epub.images",
+    "desc": "A Trip to the Chain-Bridge, Near Bangor, and Other Parts of North Wales by a Gentleman of Liverpool is a travel narrative written in the early 19th century, likely during the 1820s. This book is a firsthand account of a journey into North Wales, focusing on picturesque locations and notable landmarks such as the Chain-Bridge and various towns including Beaumaris and Carnarvon. The narrative captures the beauty of the Welsh landscape and the author's experiences during his trip."
   },
   {
-    "title": "1984",
-    "author": "George Orwell",
-    "year": 1949,
-    "category": "Dystopian",
-    "link": "ebooks/1984.pdf"
+    "title": "A Book of North Wales",
+    "img": "https://www.gutenberg.org/cache/epub/51765/pg51765.cover.medium.jpg",
+    "auth": "S. Baring-Gould",
+    "year": 1903,
+    "cat": "Cymric Collection",
+    "link": "https://www.gutenberg.org/ebooks/51765.epub.images",
+    "desc": "A historical account written in the early 20th century. This work serves as an introduction to North Wales, aiming to deepen the understanding of the region's rich history for visitors and tourists. Unlike traditional travel guides, it provides insights into the region's historical context rather than practical travel advice."
   },
-  {
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "year": 1960,
-    "genre": "Novel",
-    "link": "ebooks/to-kill-a-mockingbird.pdf"
-  }
+    {
+    "title": "The Chester and Holyhead Railway and Its Prospects ",
+    "img": "https://www.gutenberg.org/cache/epub/62157/pg62157.cover.medium.jpg",
+    "auth": "William Morgan",
+    "year": 1849,
+    "cat": "Cymric Collection",
+    "link": "https://www.gutenberg.org/ebooks/62157.epub.images",
+    "desc": "A historical account written in the mid-19th century. The book discusses the significance of the Chester and Holyhead Railway, which links England to Ireland, particularly highlighting its construction challenges and monumental achievements. "
+  },
+    {
+    "title": "Welsh Folk-Lore",
+    "img": "https://www.gutenberg.org/cache/epub/20096/pg20096-images.html",
+    "auth": "Elias Owen",
+    "year": 1887,
+    "cat": "Cymric Collection",
+    "link": "https://www.gutenberg.org/ebooks/20096.epub.images",
+    "desc": "A collection of folk tales and legends written in the late 19th century. This volume, which won a prize at the 1887 National Eisteddfod, explores the rich tapestry of fantastical narratives rooted in Welsh culture, particularly from North Wales. The work draws upon extensive oral traditions, reflecting on the customs and beliefs of the Welsh people, and is dedicated to uncovering the historical significance of these tales. "
+  },
+    {
+    "title": "Cartrefi Cymru",
+    "img": "https://www.gutenberg.org/cache/epub/3680/pg3680.cover.medium.jpg",
+    "auth": "Owen Morgan Edwards",
+    "year": 1896,
+    "cat": "Cymric Collection",
+    "link": "https://www.gutenberg.org/ebooks/3680.epub.images",
+    "desc": "A historical account likely written in the late 19th century. The book explores notable homes and locations throughout Wales, delving into the lives of significant Welsh figures associated with these places. The opening chapters introduce various residences, highlighting their historical and cultural significance while sketching brief biographies of notable individuals like Ann Griffiths and Ap Vychan. "
+  },
 ]
