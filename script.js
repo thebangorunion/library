@@ -1,7 +1,7 @@
 let books = [];
 let filteredBooks = [];
 let currentPage = 1;
-const booksPerPage = 10; // adjust this if you want more/less per page
+const booksPerPage = 20;
 
 async function loadBooks() {
   const response = await fetch('books.json');
@@ -31,7 +31,7 @@ function displayBooks() {
   const endIndex = startIndex + booksPerPage;
   const pageBooks = filteredBooks.slice(startIndex, endIndex);
 
-  pageBooks.forEach(book => {
+  pageBooks.forEach((book, index) => {
     const card = document.createElement('div');
     card.className = 'book-card';
     card.innerHTML = `
@@ -41,7 +41,7 @@ function displayBooks() {
         <p><strong>Author:</strong> ${book.auth || 'Unknown'}</p>
         <p><strong>Year:</strong> ${book.year || '—'}</p>
         <p><strong>Collection:</strong> ${book.cat || '—'}</p>
-        ${book.desc ? `<p class="desc">${book.desc}</p>` : ''}
+        <a href="book.html?id=${encodeURIComponent(book.title)}" class="read-btn">ℹ️ View Details</a>
         <a href="${book.link}" target="_blank" class="read-btn">📖 Read Book</a>
       </div>
     `;
@@ -64,7 +64,7 @@ function filterBooks() {
     return matchesSearch && matchesCategory;
   });
 
-  currentPage = 1; // reset to first page
+  currentPage = 1;
   displayBooks();
 }
 
