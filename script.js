@@ -1,7 +1,7 @@
 let books = [];
 let filteredBooks = [];
 let currentPage = 1;
-const booksPerPage = 20; // adjust number of books per page
+const booksPerPage = 10; // adjust this if you want more/less per page
 
 async function loadBooks() {
   const response = await fetch('books.json');
@@ -9,12 +9,11 @@ async function loadBooks() {
   populateCategories();
   filteredBooks = books;
   displayBooks();
-  updatePagination();
 }
 
 function populateCategories() {
   const categorySelect = document.getElementById('category');
-  const cats = Array.from(new Set(books.map(b => b.cat)));
+  const cats = Array.from(new Set(books.map(b => b.cat))).sort();
   categorySelect.innerHTML = '<option value="all">All Categories</option>';
   cats.forEach(cat => {
     const option = document.createElement('option');
@@ -28,21 +27,23 @@ function displayBooks() {
   const list = document.getElementById('book-list');
   list.innerHTML = '';
 
-  // Calculate slice for current page
   const startIndex = (currentPage - 1) * booksPerPage;
   const endIndex = startIndex + booksPerPage;
   const pageBooks = filteredBooks.slice(startIndex, endIndex);
 
-  // Display each book card
   pageBooks.forEach(book => {
     const card = document.createElement('div');
     card.className = 'book-card';
     card.innerHTML = `
-      <h3>${book.title}</h3>
-      <p><strong>Author:</strong> ${book.author}</p>
-      <p><strong>Year:</strong> ${book.year}</p>
-      <p><strong>In:</strong> ${book.cat}</p>
-      <a href="${book.link}" target="_blank">Read Book</a>
+      <img src="${book.img || 'https://via.placeholder.com/120x160?text=No+Cover'}" alt="${book.title}" class="book-cover">
+      <div class="book-details">
+        <h3>${book.title}</h3>
+        <p><strong>Author:</strong> ${book.auth || 'Unknown'}</p>
+        <p><strong>Year:</strong> ${book.year || '—'}</p>
+        <p><strong>Collection:</strong> ${book.cat || '—'}</p>
+        ${book.desc ? `<p class="desc">${book.desc}</p>` : ''}
+        <a href="${book.link}" target="_blank" class="read-btn">📖 Read Book</a>
+      </div>
     `;
     list.appendChild(card);
   });
@@ -57,13 +58,13 @@ function filterBooks() {
   filteredBooks = books.filter(b => {
     const matchesSearch =
       b.title.toLowerCase().includes(searchTerm) ||
-      b.author.toLowerCase().includes(searchTerm);
+      (b.auth && b.auth.toLowerCase().includes(searchTerm));
     const matchesCategory =
       selectedCategory === 'all' || b.cat === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  currentPage = 1; // reset to first page after filtering
+  currentPage = 1; // reset to first page
   displayBooks();
 }
 
@@ -72,7 +73,6 @@ function updatePagination() {
   pagination.innerHTML = '';
 
   const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
-
   if (totalPages <= 1) return;
 
   const prev = document.createElement('button');
@@ -86,7 +86,6 @@ function updatePagination() {
 
   const pageInfo = document.createElement('span');
   pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-  pageInfo.style.margin = '0 10px';
   pagination.appendChild(pageInfo);
 
   const next = document.createElement('button');
