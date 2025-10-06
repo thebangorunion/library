@@ -41,8 +41,7 @@ function displayBooks() {
         <p><strong>Author:</strong> ${book.auth || 'Unknown'}</p>
         <p><strong>Year:</strong> ${book.year || '—'}</p>
         <p><strong>Collection:</strong> ${book.cat || '—'}</p>
-        <a href="book.html?id=${encodeURIComponent(book.title)}" class="read-btn">ℹ️ View Details</a>
-        <a href="${book.link}" target="_blank" class="read-btn">📖 Read Book</a>
+        <a href="book.html?id=${encodeURIComponent(book.title)}" class="read-btn"> View Details</a>
       </div>
     `;
     list.appendChild(card);
